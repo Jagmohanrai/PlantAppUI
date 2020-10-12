@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantshop/plantpage.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -154,10 +155,24 @@ class _MainPageState extends State<MainPage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    plantCaer(
-                      imglink: "assets/plant.png",
-                      name: 'Crassula',
-                      price: '50.000',
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PlantPage(
+                              imglink: "assets/plant.png",
+                              name: 'Crassula',
+                              price: '50.000',
+                            ),
+                          ),
+                        );
+                      },
+                      child: plantCaer(
+                        imglink: "assets/plant.png",
+                        name: 'Crassula',
+                        price: '50.000',
+                      ),
                     ),
                     plantCaer(
                       imglink: "assets/plant.png",
